@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.order.system</groupId>
+	<artifactId>order-item-service-parent</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>order-item-service-parent</name>
+	<description>ORDER-SERVICE-SYSTEM</description>
+
+	<properties>
+		<java.version>11</java.version>
+        <java.min.version>11</java.min.version>
+        <maven.min.version>3.3.9</maven.min.version>
+        <junit.version>4.12</junit.version>
+        <jacoco.version>0.8.3</jacoco.version>
+        <jacoco.percentage.instruction>0.0</jacoco.percentage.instruction>
+        <apache.log4j.version>1.2.17</apache.log4j.version>
+		<netty.transport.version>5.0.0.Alpha2</netty.transport.version>
+		<zeebe.client.version>0.17.0</zeebe.client.version>
+		<spring.boot.jpa.version>2.1.4.RELEASE</spring.boot.jpa.version>
+		<spring.boot.mongodb.version>2.1.4.RELEASE</spring.boot.mongodb.version>
+		<jackson.dataformat.xml.version>2.9.8</jackson.dataformat.xml.version>
+		<spring.boot.web.version>2.1.4.RELEASE</spring.boot.web.version>
+		<spring.cloud.eureka.version>1.4.6.RELEASE</spring.cloud.eureka.version>
+		 <spring.cloud.starter.version>2.1.1.RELEASE</spring.cloud.starter.version>
+		<spring.boot.maven.plugin.version>2.1.4.RELEASE</spring.boot.maven.plugin.version>
+		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+	</properties>
+	
+		<profiles>
+		
+		<profile>
+			<id>nexus</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			
+		</profile>
+		
+		<!-- ************************************** -->
+		<!-- AGGREGATE CHILD MODULE BUILD SEQUENCE -->
+		<!-- *************************************** -->
+		<profile>
+			<id>digital</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
+			<modules>
+				<module>orderItemService</module>
+			</modules>
+		</profile>
+	  </profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
+
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20180813</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.fge/json-schema-core -->
+		<dependency>
+			<groupId>com.github.fge</groupId>
+			<artifactId>json-schema-core</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+   			<groupId>org.springframework.boot</groupId>
+   			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+			    <groupId>org.json</groupId>
+			    <artifactId>json</artifactId>
+			    <version>20131018</version>
+			</dependency>
+			<dependency>
+			    <groupId>io.springfox</groupId>
+			    <artifactId>springfox-swagger2</artifactId>
+			    <version>2.6.1</version>
+			    <scope>compile</scope>
+			</dependency>
+			<dependency>
+			    <groupId>io.springfox</groupId>
+			    <artifactId>springfox-swagger-ui</artifactId>
+			    <version>2.6.1</version>
+			    <scope>compile</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<scope>runtime</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	 <!-- ******************************** -->
+        <!-- THIS PARENT BUILD CONFIGURATION -->
+        <!-- ******************************** -->
+        <build>
+               <!-- PLUGIN goals executed in this parent POM -->
+               <plugins>
+                       <plugin>
+                               <groupId>org.apache.maven.plugins</groupId>
+                               <artifactId>maven-enforcer-plugin</artifactId>
+                               <executions>
+                                      <execution>
+                                              <id>enforce-versions</id>
+                                              <phase>validate</phase>
+                                              <goals>
+                                                     <goal>enforce</goal>
+                                              </goals>
+                                              <configuration>
+                                                     <rules>
+                                                             <requireJavaVersion>
+                                                                     <version>[${java.min.version},)</version>
+                                                             </requireJavaVersion>
+                                                             <requireMavenVersion>
+                                                                     <version>[${maven.min.version},)</version>
+                                                             </requireMavenVersion>
+                                                             <requirePluginVersions>
+                                                                     <message>it is a best practice to define plugin version either
+                                                                            in plugins or pluginManagement</message>
+                                                             </requirePluginVersions>
+                                                     </rules>
+                                              </configuration>
+                                      </execution>
+                               </executions>
+                       </plugin>
+
+                       <!-- clean output directory before building the assembly directory -->
+                       <plugin>
+                               <groupId>org.apache.maven.plugins</groupId>
+                               <artifactId>maven-clean-plugin</artifactId>
+                               <executions>
+                                      <execution>
+                                              <id>auto-clean</id>
+                                              <phase>initialize</phase>
+                                              <goals>
+                                                     <goal>clean</goal>
+                                              </goals>
+                                      </execution>
+                               </executions>
+                       </plugin>
+               </plugins>
+
+               <!-- ************************************************************* -->
+               <!-- MANAGE PLUGIN version and goals inherited by child modules -->
+               <!-- ************************************************************* -->
+               <pluginManagement>
+                       <plugins>
+                <!-- define Core plugins and versions -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>1.4.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <nonFilteredFileExtensions>
+                            <!-- default value contains jpg,jpeg,gif,bmp,png -->
+                            <nonFilteredFileExtension>tif</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>tiff</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>swf</nonFilteredFileExtension>
+                        </nonFilteredFileExtensions>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.0</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.1</version>
+                    <configuration>
+                        <useSystemClassLoader>false</useSystemClassLoader>
+                    </configuration>
+                </plugin>
+
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                <plugin>
+                	<groupId>org.eclipse.m2e</groupId>
+                	<artifactId>lifecycle-mapping</artifactId>
+                	<version>1.0.0</version>
+                	<configuration>
+                		<lifecycleMappingMetadata>
+                			<pluginExecutions>
+                				<pluginExecution>
+                					<pluginExecutionFilter>
+                						<groupId>
+                							org.apache.maven.plugins
+                						</groupId>
+                						<artifactId>
+                							maven-clean-plugin
+                						</artifactId>
+                						<versionRange>
+                							[3.1.0,)
+                						</versionRange>
+                						<goals>
+                							<goal>clean</goal>
+                						</goals>
+                					</pluginExecutionFilter>
+                					<action>
+                						<ignore></ignore>
+                					</action>
+                				</pluginExecution>
+                			</pluginExecutions>
+                		</lifecycleMappingMetadata>
+                	</configuration>
+                </plugin>
+                       </plugins>
+               </pluginManagement>
+        </build>
+
+</project> 
