@@ -1,4 +1,4 @@
-package com.order.system.web.exception;
+package com.order.system.exception;
 
 public class ResourceRemoveException extends RuntimeException {
 

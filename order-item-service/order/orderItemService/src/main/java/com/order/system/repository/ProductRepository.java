@@ -1,15 +1,14 @@
 package com.order.system.repository;
 
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
-import com.order.system.model.Product;
+
+import com.order.system.document.Product;
 
 @Repository
 public class ProductRepository{
@@ -28,7 +27,7 @@ public class ProductRepository{
 		
 	}
 
-	public List<Product> findAllWithSupplierAndCategory() {
+	public List<Product> findAllProductItem() {
 		List<Product> productList = null;
 		try {
 			productList  = mongoOperations.findAll(Product.class, "products");

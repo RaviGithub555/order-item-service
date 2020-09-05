@@ -3,11 +3,7 @@ package com.order.system.util;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * @author Concierge Code
- * 
- */
-public class DateUtil {//java 8
+public class DateUtil {
 	public static String getNowDateTime() {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		LocalDateTime now = LocalDateTime.now();

@@ -1,7 +1,5 @@
-package com.order.system.model;
+package com.order.system.bean;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 public class OrderItemBean {
 	

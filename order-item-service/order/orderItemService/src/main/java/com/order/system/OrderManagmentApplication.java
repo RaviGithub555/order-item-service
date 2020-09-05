@@ -13,8 +13,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-//@EnableAutoConfiguration
-@EnableJpaRepositories("com.order.system.repository")
 public class OrderManagmentApplication implements CommandLineRunner{
 	
 	

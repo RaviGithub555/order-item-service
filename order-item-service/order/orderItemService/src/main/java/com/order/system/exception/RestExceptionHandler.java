@@ -1,4 +1,4 @@
-package com.order.system.web.exception;
+package com.order.system.exception;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import com.order.system.web.exception.BadRequestException;
-import com.order.system.web.exception.ResourceNotFoundException;
-import com.order.system.web.exception.ResourceRemoveException;
+import com.order.system.exception.BadRequestException;
+import com.order.system.exception.ResourceNotFoundException;
+import com.order.system.exception.ResourceRemoveException;
 
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
